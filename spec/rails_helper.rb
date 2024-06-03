@@ -81,6 +81,9 @@ RSpec.configure do |config|
   # JSON Parsing Helper Class
   config.include RequestSpecHelper, type: :request
 
+  # Controller Helper Class
+  config.include ControllerSpecHelper
+
   # start by truncation all the tables but then use the faster transaction strategy the rest of the time
   config.before(:suite) do
     # 전체 테스트가 시작되기 전에 모든 테이블의 데이터를 삭제
