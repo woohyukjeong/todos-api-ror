@@ -32,7 +32,7 @@ module ExceptionHandler
   end
 
   # JSON Error Response - general method
-  def err_response(err, status)
-    json_response({ message: err.message}, status)
+  def err_response(err_msg, status)
+    json_response({ message: err_msg}, status)
   end
 end
