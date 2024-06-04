@@ -9,6 +9,7 @@ class AuthenticationController < ApplicationController
   private
 
   def auth_params
-    params.permit(:email, :password)
+    permitted_params(required=[:email, :password], optional=[])
+    # params.permit(:email, :password)
   end
 end

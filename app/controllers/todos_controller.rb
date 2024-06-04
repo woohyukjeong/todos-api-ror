@@ -32,7 +32,7 @@ class TodosController < ApplicationController
   def todo_params
     # Strong Parameters 기능을 활용하여 title  필드만 요청의 매개변수로 허용
     # 허용되지 않는 매개변수는 제거된다
-    params.permit(:title)
+    permitted_params(required=[:title], [])
   end
 
   def set_todo

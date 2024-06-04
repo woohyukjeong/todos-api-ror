@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
   end
 
   def validate_items_params_for_update
-    permitted_params([],  [:name, :todo_id])
+    permitted_params([],  [:name, :todo_id, :done])
   end
 
   # Todo Item 설정 Filter 메서드
