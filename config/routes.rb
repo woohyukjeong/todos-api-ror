@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 
   # 로그인 API routes mapping
   post 'auth/login', to: 'authentication#authenticate'
+
+  # 회원가입 API routes mapping
+  post 'signup', to: 'users#create'
 end
