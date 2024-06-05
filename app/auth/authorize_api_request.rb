@@ -21,10 +21,7 @@ class AuthorizeApiRequest
     # User가 존재하지 않을 경우 에러
   rescue ActiveRecord::RecordNotFound => e
     # 잘못된 토큰 정보
-    raise(
-      ExceptionHandler::InvalidToken,
-      ("#{Message.invalid_token} #{e.message}")
-    )
+    raise ExceptionHandler::InvalidToken, "#{Message.invalid_token} #{e.message}"
   end
 
   # JWT를 검증한다
@@ -38,6 +35,6 @@ class AuthorizeApiRequest
     if headers['Authorization'].present?
       return headers['Authorization'].split(' ').last
     end
-    raise(ExceptionHandler::MissingToken, Message.missing_token)
+    raise ExceptionHandler::MissingToken, Message.missing_token
   end
 end
