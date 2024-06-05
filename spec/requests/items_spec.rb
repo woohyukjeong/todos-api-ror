@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe "Items API", type: :request do
   # Initialize Test Data
   let!(:user) { create(:user) }
-  let!(:todo) { create(:todo, created_by: user.id) }
+  # let!(:todo) { create(:todo, created_by: user.id) }
+  let!(:todo) { create(:todo) }
   let!(:items) { create_list(:item, 20, todo_id: todo.id) }
   let(:todo_id) { todo.id }
   let(:id)  { items.first.id }
