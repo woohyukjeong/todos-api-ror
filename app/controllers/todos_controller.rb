@@ -16,7 +16,7 @@ class TodosController < ApplicationController
   end
 
   def destroy
-    Todo.delete(@todo)
+    @todo.destroy
     head :no_content
   end
 
