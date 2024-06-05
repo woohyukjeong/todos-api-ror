@@ -2,8 +2,8 @@ class TodosController < ApplicationController
   before_action :set_todo, only: [:show, :update, :destroy]
 
   def index
-    @todos = current_user.todos
-    json_response(@todos)
+    todos = current_user.todos
+    json_response(todos)
   end
 
   def show
